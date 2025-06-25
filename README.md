@@ -22,4 +22,4 @@ Die Hauptordner enthalten den Frontend-Code (`frontend/`), den Backend-Server (`
 
 ## Bilder von der Podcast Webseite
 
-<img src="./screenshots/podcastappimage.png" alt="Podcast WebApp Screenshot" style="max-width:600px; width:100%; height:auto;"> ```
+<img src="./screenshots/podcastappimage.png" alt="Podcast WebApp Screenshot" style="max-width:600px; width:100%; height:auto;"> 
