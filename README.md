@@ -4,8 +4,6 @@ Ein Fullstack-Projekt für eine Podcast-Plattform, entwickelt mit HTML, CSS, Jav
 
 Die Hauptordner enthalten den Frontend-Code (`frontend/`), den Backend-Server (`backend/`), Docker-Konfigurationen (`docker/`) sowie Screenshots (`screenshots/`). Die wichtigsten Konfigurationsdateien liegen im Projektstammverzeichnis.
 
----
-
 ## Technologien
 
 - Frontend: HTML, CSS, JavaScript (Vanilla)  
@@ -15,8 +13,6 @@ Die Hauptordner enthalten den Frontend-Code (`frontend/`), den Backend-Server (`
 - CI/CD: GitLab  
 - Versionierung: Git  
 
----
-
 ## Voraussetzungen
 
 - Node.js (v18+ empfohlen)  
@@ -24,7 +20,6 @@ Die Hauptordner enthalten den Frontend-Code (`frontend/`), den Backend-Server (`
 - Docker & Docker Compose (optional für Deployment)  
 - Git (für Klonen & Versionierung)  
 
----
+## Bilder von der Podcast Webseite
 
 <img src="./screenshots/podcastappimage.png" alt="Podcast WebApp Screenshot" style="max-width:600px; width:100%; height:auto;"> ```
-
