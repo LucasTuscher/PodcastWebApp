@@ -1,0 +1,12 @@
+.register-container {width:100%;height:100%;display:flex;justify-content:center;align-items:center;margin-top:40px;}
+.register-content {background:#0d1116;border-radius:40px;width:100%;max-width:485px;height:510px;margin:0 30px;display:flex;justify-content:center;align-items:center;border:3px solid #79b4c9;outline:11px solid #0d1116;}
+.register-auth-container {padding:25px;display:flex;justify-content:center;align-items:center;width:100%}
+.register-auth-form {display:flex;width:100%;justify-content:center;align-items:center;flex-direction:column;}
+.register-auth-form-title {font-size:37px;display:flex;justify-content:center;line-height:1;margin-bottom:25px;font-family:"SF Pro Display BlackItalic", sans-serif;}
+.register-distance {height:6px;}
+.input-container input {border-radius:18px;color:rgb(255, 255, 255, 0.5);background:transparent;border:1px solid rgb(255, 255, 255, 0.1);height:46px;width:355px;padding:0 20px;outline:2px solid transparent;}
+.input-container input:focus {outline:2px solid #79b4c9;;border:1px solid #79b4c9;}
+.register-auth-form-button-anmelden {color:white;background:#79b4c9;border-radius:20px;padding:10px 28px;font-size:17px;margin-top:22px;transition:all 400ms ease-in-out;}
+.register-auth-form-button-anmelden:hover {background:#182637;}
+.register-auth-form-login-link {color:#79b4c9;font-size:15px;font-family:"SF Pro Display MediumItalic", sans-serif;margin-top:16px;background:transparent;}
+.register-auth-form-login-link:hover {text-decoration:underline;}

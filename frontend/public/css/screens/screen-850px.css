@@ -1,0 +1,7 @@
+@media screen and (max-width: 850px) {
+
+    /* Main Bereich */
+    .main-body-main_page-categories-help-listitem {background:#1a2431;flex:100%;box-sizing:border-box;margin-bottom:20px;text-align:center;position:relative;border-radius:12px;height:50px;cursor:pointer;}
+    /* Main Bereich */
+
+}

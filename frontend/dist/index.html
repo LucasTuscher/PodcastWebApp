@@ -1,0 +1,1018 @@
+<!DOCTYPE html><html class="nojs htmlclass" lang="de"><!-- Head Bereich--><head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="Podcast App, mobile Podcast App, Podcasts anhören, Podcast entdecken, beste Podcasts, Audio-Streaming, Podcast-Player, beliebte Podcasts, Podcast-Verzeichnis">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="author" content="Niclas Tredup, Andreas Lucas Tuscher, Junior">
+        <meta name="description" content="Eine Podcast-App ist eine mobile Anwendung, die es Benutzern ermöglicht, verschiedene Podcasts zu entdecken und anzuhören.">
+        <meta name="robots" content="index, follow">
+
+        <title>Podcast App - Startseite</title>
+
+        <link rel="icon" type="image/x-icon" href="/favicon.58eb6f59.ico">
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Podcast App - Entdecke und Höre deine Lieblings-Podcasts">
+        <meta name="twitter:description" content="Unsere Podcast-App ermöglicht es dir, überall und jederzeit Podcasts zu entdecken und zu hören.">
+
+        <!-- Web-App herunterladen (Funktion) -->
+        <link rel="manifest" href="/manifest.webmanifest">
+
+        <link type="text/css" rel="stylesheet" href="/public.755baf2d.css">
+        <link type="text/css" rel="stylesheet" href="/public.a890080d.css">
+    </head>
+    <!-- Head Bereich-->
+
+    <!-- Body Bereich -->
+    <body>
+
+        <!-- Sidebar -->
+        <nav class="sidebar-navigation" id="responsiveSidebarContainer" aria-label="Sidebar navigation">
+            <div class="sidebar-main-container">
+                <div class="sidebar-close-responsive-container">
+                    <div class="sidebar-close-responsive-content">
+                        <button aria-label="Close sidebar" class="sidebar-close-responsive-icon fa-solid fa-circle-xmark" id="closeResponsiveMenuIcon"></button>
+                    </div>
+                </div>
+                <div class="sidebar-logo-container">
+                    <div class="sidebar-logo-content">
+                        <h1 class="sidebar-logo-text">Podcast</h1>
+                    </div>
+                </div>
+                <div class="sidebar-search-container">
+                    <div class="sidebar-search-content">
+                        <div class="sidebar-search-icon">
+                            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                        </div>
+                        <div class="sidebar-search-input">
+                            <input id="searchQuery" oninput="searchPodcasts()" type="text" placeholder="Schnellsuche" name="" aria-label="Search podcasts">
+                        </div>
+                        <div class="sidebar-search-close-icon" id="closeButton">
+                            <button class="sidebar-search-close-button" aria-label="Clear search">
+                                <i class="fa-solid fa-circle-xmark"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="sidebar-search-result-container">
+                        <div class="sidebar-search-result-content">
+                            <div class="sidebar-search-result-line" aria-hidden="true"></div>
+                            <p class="sidebar-search-result-status-message" id="statusMessage" aria-live="polite"></p>
+                            <div id="results" class="search-result" style="margin-top: 11px"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-navigator-container">
+                    <div class="sidebar-navigator-content">
+                        <ul class="sidebar-navigator-list">
+                            <li class="sidebar-navigator-listitem">
+                                <button class="sidebar-navigator-button navigator-button-home" href="#home" onclick="navigateTo('home')" aria-label="Navigate to Home">
+                                    <div class="sidebar-naviagtor-icon-container">
+                                        <i class="sidebar-navigator-icon fa-solid fa-house" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="sidebar-navigator-text-container">
+                                        <p class="sidebar-navigator-text">Startseite</p>
+                                    </div>
+                                </button>
+                            </li>
+                            <li class="sidebar-navigator-listitem">
+                                <button class="sidebar-navigator-button navigator-button-favorite" href="#favorites" onclick="navigateTo('favorites')" aria-label="Navigate to Favorites">
+                                    <div class="sidebar-naviagtor-icon-container">
+                                        <i class="sidebar-navigator-icon fa-solid fa-star" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="sidebar-navigator-text-container">
+                                        <p class="sidebar-navigator-text">Favoriten</p>
+                                    </div>
+                                </button>
+                            </li>
+                            <li class="sidebar-navigator-listitem">
+                                <button class="sidebar-navigator-button navigator-button-categories" href="#categorie" onclick="navigateTo('categories')" aria-label="Navigate to Categories">
+                                    <div class="sidebar-naviagtor-icon-container">
+                                        <i class="sidebar-navigator-icon fa-solid fa-list" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="sidebar-navigator-text-container">
+                                        <p class="sidebar-navigator-text">Kategorien</p>
+                                    </div>
+                                </button>
+                            </li>
+                            <li class="sidebar-navigator-listitem">
+                                <button class="sidebar-navigator-button navigator-button-podcastSearch" href="#podcastSearch" onclick="navigateTo('podcastSearch')" aria-label="Navigate to Filtered Search">
+                                    <div class="sidebar-naviagtor-icon-container">
+                                        <i class="sidebar-navigator-icon fa-solid fa-search" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="sidebar-navigator-text-container">
+                                        <p class="sidebar-navigator-text">Suche</p>
+                                    </div>
+                                </button>
+                            </li>
+                            <li class="sidebar-navigator-listitem">
+                                <button class="sidebar-navigator-button navigator-button-random" href="#randomPodcast" onclick="navigateTo('randomPodcast')" aria-label="Navigate to Random Podcast">
+                                    <div class="sidebar-naviagtor-icon-container">
+                                        <i class="sidebar-navigator-icon fa-solid fa-shuffle" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="sidebar-navigator-text-container">
+                                        <p class="sidebar-navigator-text">Zufallspodcast</p>
+                                    </div>
+                                </button>
+                            </li>
+                            <li class="sidebar-navigator-listitem">
+                                <button class="sidebar-navigator-button navigator-button-account" id="sidebar-navigator-button-isAuth" onclick="handleNavigation()" aria-label="Navigate to login">
+                                    <div class="sidebar-naviagtor-icon-container">
+                                        <i class="sidebar-navigator-icon fa-solid fa-users" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="sidebar-navigator-text-container">
+                                        <p class="sidebar-navigator-text">Account Verwaltung</p>
+                                    </div>
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="sidebar-line-container"></div>
+                        <button class="sidebar-navigator-button sidebar-credits-button" href="#credits&quot;" onclick="navigateTo('credits')" aria-label="Navigate to Credits">
+                            <div class="sidebar-naviagtor-icon-container">
+                                <i class="sidebar-navigator-icon sidebar-credits-icon fa-solid fa-user" aria-hidden="true"></i>
+                            </div>
+                            <div class="sidebar-navigator-text-container">
+                                <p class="sidebar-navigator-text sidebar-credits-text">Mitwirkende</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div class="sidebar-main-footer-container">
+                    <div class="footer-main-container">
+                        <button id="logoutButton" class="footer-main-logout-button" onclick="logout()">Ausloggen</button>
+                        <div class="footer-modul-container" style="margin-top: 10px; font-size: 11px">
+                            <p> Copyright © 2025 Neuer Gruppenname. Alle Rechte vorbehalten</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Sidebar -->
+
+        <!-- Responsive Navigation -->
+        <div class="responsive-navigation-main">
+            <div class="responsive-navigation-content">
+                <div class="responsive-navigation-left-container">
+                    <div class="responsive-navigation-left-content">
+                        <i class="responsive-navigation-left-icon fa-solid fa-bars-staggered" id="openResponsiveButton"></i>
+                    </div>
+                </div>
+               <div class="responsive-navigation-center-container">
+                    <div class="responsive-navigation-center-content">
+                        <h1 class="responsive-navigation-center-title">Podcast</h1>
+                    </div>
+                </div>
+                <div class="responsive-navigation-right-container">
+                    <div class="responsive-navigation-right-content">
+                        <button class="responsive-navigation-right-anker" href="#podcastSearch" onclick="navigateTo('podcastSearch')">
+                            <i class="responsive-navigation-right-icon fa-solid fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="responsive-navigation-background-container">
+            <div class="responsive-navigation-background"></div>
+        </div>
+        <div class="responsive-navigation-distance"></div>
+        <!-- Responsive Navigation -->
+
+        <!-- Main Bereich -->
+        <main class="main-container">
+            <div class="main-content">
+
+                <div id="app"></div>
+
+                <!-- Main Player -->
+                <div class="player-background">
+                    <div class="background"></div>
+                </div>
+                <div class="main-podcast-player">
+                    <div class="main-podcast-player-container">
+                        <div class="main-podcast-player-layout">
+                            <div class="main-podcast-player-left-container">
+                                <div class="main-podcast-player-left-content">
+                                    <div class="podcast-player-image">
+                                        <i class="podcast-player-image-icon fa-solid fa-podcast"></i>
+                                        <i class="podcast-player-image-player-open-icon fa-solid fa-up-right-and-down-left-from-center" title="Podcast Übersicht öffnen"></i>
+                                        <img id="player-image" style="display: none" src="/placeholder.fcba8596.png" alt="Podcast Image">
+                                    </div>
+                                    <div class="podcast-player-title">
+                                        <h2 id="player-title" style="display: none"></h2>
+                                        <p id="player-not-active">-----</p>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-podcast-player-right-container">
+                                <div class="main-podcast-player-right-content">
+                                    <div class="podcast-player-backward backward-onclick-function">
+                                        <i class="fa-solid fa-backward" title="Letzter Podcast"></i>
+                                    </div>
+                                    <div class="podcast-player-play play-onclick-function">
+                                        <i class="fa-solid fa-play" title="Podcast abspielen"></i>
+                                        <i class="fa-solid fa-pause" title="Podcast pausieren" style="display: none"></i>
+                                    </div>
+                                    <div class="podcast-player-forward forward-onclick-function">
+                                        <i class="fa-solid fa-forward" title="Nächster Podcast"></i>
+                                    </div>
+                                    <div class="podcast-player-back-podcast">
+                                        <i class="fa-solid fa-right-to-bracket" title="Zurück zur Podcast Detail Seite"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Main Player -->
+
+            </div>
+        </main>
+        <!-- Main Bereich -->
+
+        <!-- Player Fullscreen Modal -->
+        <div class="player-fullscreen-container">
+            <div class="player-fullscreen-content">
+                <div class="player-fullscreen-distance">
+                    <div class="player-fullscreen-close-container">
+                        <div class="player-fullscreen-close-icon-sys">
+                            <i class="player-fullscreen-close-icon fa-solid fa-circle-xmark"></i>
+                        </div>
+                    </div>
+                    <div class="player-fullscreen-main-container">
+                        <div class="player-fullscreen-main-content">
+                            <div class="player-fullscreen-inner-container">
+                                <div class="player-fullscreen-inner-top-container">
+                                    <div class="player-fullscreen-inner-musik_icon-container">
+                                        <i class="player-fullscreen-inner-musik_icon fa-solid fa-podcast"></i>
+                                        <img class="fullscreen-player-image" id="fullscreen-player-image" style="display: none" src="/placeholder.fcba8596.png" alt="Podcast Image">
+                                    </div>
+                                </div>
+                                <div class="player-fullscreen-inner-bottom-container">
+                                    <div class="player-fullscreen-inner-time-container">
+                                        <div class="player-fullscreen-inner-time-top-container">
+                                            <div class="player-fullscreen-inner-time-line-container">
+                                                <input type="range" min="0" max="100" value="0" id="fullscreen-player-time-range" class="fullscreen-player-range-input" disabled="">
+                                            </div>
+                                        </div>
+                                        <div class="player-fullscreen-inner-time-bottom-container">
+                                            <div class="player-fullscreen-inner-time-bottom-time_text">
+                                                <p id="current-time">0:00</p>
+                                            </div>
+                                            <div class="player-fullscreen-inner-time-bottom-time_text">
+                                                <p id="total-time">0:00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="player-fullscreen-inner-play_system-container">
+                                        <div class="player-fullscreen-inner-play_system-left-container">
+                                            <i class="player-fullscreen-inner-play_system-icon fa-solid fa-backward" title="Letzter Podcast"></i>
+                                        </div>
+                                        <div class="player-fullscreen-inner-play_system-center-container fullscreen-podcast-player-play">
+                                            <i class="player-fullscreen-inner-play_system-icon fa-solid fa-play" title="Podcast abspielen"></i>
+                                            <i class="player-fullscreen-inner-play_system-icon fa-solid fa-pause" title="Podcast pausieren" style="display: none"></i>
+                                        </div>
+                                        <div class="player-fullscreen-inner-play_system-right-container">
+                                            <i class="player-fullscreen-inner-play_system-icon fa-solid fa-forward" title="Nächster Podcast"></i>
+                                        </div>
+                                    </div>
+                                    <div class="player-fullscreen-inner-volume-container">
+                                        <div class="player-fullscreen-inner-volume-left-container">
+                                            <i class="player-fullscreen-inner-volume-icon fa-solid fa-volume-down"></i>
+                                        </div>
+                                        <div class="player-fullscreen-inner-volume-line-container">
+                                            <div class="fullscreen-player-range-container">
+                                                <input type="range" min="0" max="50" value="5" id="fullscreen-player-range-js" class="fullscreen-player-range-input">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Player Fullscreen Modal -->
+
+    
+    
+
+    
+    <script src="/public.af63a0d0.js"></script>
+    <script src="/public.32c3d699.js"></script>
+    <script src="/public.f1954841.js"></script>
+    <script src="/public.7b1dd023.js"></script>
+    <script src="/public.1667765c.js"></script>
+    <script src="/public.f2f00fed.js"></script>
+    <script src="/public.5fe0deca.js"></script>
+    <script src="/public.a42454ba.js"></script>
+    <script src="/public.425655e8.js"></script>
+    <script src="/public.d4bda14e.js"></script>
+    <script src="/public.0d467f8a.js" defer=""></script>
+    <script src="/public.0fb53cde.js"></script>
+    <script src="/public.8c99972d.js"></script>
+    <script src="/public.ae5d5a4c.js"></script>
+    <script src="/public.a6803ea3.js"></script>
+    <script src="/public.27e8a3aa.js" defer=""></script>
+    <script src="/public.f34cc3b3.js" defer=""></script>
+    <script src="/public.2066ffd6.js" defer=""></script>
+    <script src="/public.caa828ba.js"></script>
+    <script src="/public.48c9ccbe.js" defer=""></script>
+    <script src="/public.e6b0d7ee.js" defer=""></script>
+    <script src="/public.ed73b66f.js" defer=""></script>
+    <!-- Javascript Source -->
+
+    <!-- Web-App installieren -->
+    <script>// modules are defined as an array
+// [ module function, map of requires ]
+//
+// map of requires is short require name -> numeric require
+//
+// anything defined in a previous bundle is accessed via the
+// orig method which is the require for previous bundles
+
+(function (
+  modules,
+  entry,
+  mainEntry,
+  parcelRequireName,
+  externals,
+  distDir,
+  publicUrl,
+  devServer
+) {
+  /* eslint-disable no-undef */
+  var globalObject =
+    typeof globalThis !== 'undefined'
+      ? globalThis
+      : typeof self !== 'undefined'
+      ? self
+      : typeof window !== 'undefined'
+      ? window
+      : typeof global !== 'undefined'
+      ? global
+      : {};
+  /* eslint-enable no-undef */
+
+  // Save the require from previous bundle to this closure if any
+  var previousRequire =
+    typeof globalObject[parcelRequireName] === 'function' &&
+    globalObject[parcelRequireName];
+
+  var importMap = previousRequire.i || {};
+  var cache = previousRequire.cache || {};
+  // Do not use `require` to prevent Webpack from trying to bundle this call
+  var nodeRequire =
+    typeof module !== 'undefined' &&
+    typeof module.require === 'function' &&
+    module.require.bind(module);
+
+  function newRequire(name, jumped) {
+    if (!cache[name]) {
+      if (!modules[name]) {
+        if (externals[name]) {
+          return externals[name];
+        }
+        // if we cannot find the module within our internal map or
+        // cache jump to the current global require ie. the last bundle
+        // that was added to the page.
+        var currentRequire =
+          typeof globalObject[parcelRequireName] === 'function' &&
+          globalObject[parcelRequireName];
+        if (!jumped && currentRequire) {
+          return currentRequire(name, true);
+        }
+
+        // If there are other bundles on this page the require from the
+        // previous one is saved to 'previousRequire'. Repeat this as
+        // many times as there are bundles until the module is found or
+        // we exhaust the require chain.
+        if (previousRequire) {
+          return previousRequire(name, true);
+        }
+
+        // Try the node require function if it exists.
+        if (nodeRequire && typeof name === 'string') {
+          return nodeRequire(name);
+        }
+
+        var err = new Error("Cannot find module '" + name + "'");
+        err.code = 'MODULE_NOT_FOUND';
+        throw err;
+      }
+
+      localRequire.resolve = resolve;
+      localRequire.cache = {};
+
+      var module = (cache[name] = new newRequire.Module(name));
+
+      modules[name][0].call(
+        module.exports,
+        localRequire,
+        module,
+        module.exports,
+        globalObject
+      );
+    }
+
+    return cache[name].exports;
+
+    function localRequire(x) {
+      var res = localRequire.resolve(x);
+      return res === false ? {} : newRequire(res);
+    }
+
+    function resolve(x) {
+      var id = modules[name][1][x];
+      return id != null ? id : x;
+    }
+  }
+
+  function Module(moduleName) {
+    this.id = moduleName;
+    this.bundle = newRequire;
+    this.require = nodeRequire;
+    this.exports = {};
+  }
+
+  newRequire.isParcelRequire = true;
+  newRequire.Module = Module;
+  newRequire.modules = modules;
+  newRequire.cache = cache;
+  newRequire.parent = previousRequire;
+  newRequire.distDir = distDir;
+  newRequire.publicUrl = publicUrl;
+  newRequire.devServer = devServer;
+  newRequire.i = importMap;
+  newRequire.register = function (id, exports) {
+    modules[id] = [
+      function (require, module) {
+        module.exports = exports;
+      },
+      {},
+    ];
+  };
+
+  // Only insert newRequire.load when it is actually used.
+  // The code in this file is linted against ES5, so dynamic import is not allowed.
+  var $parcel$bundleURL;function $parcel$resolve(url) {  url = importMap[url] || url;  if (!$parcel$bundleURL) {    try {      throw new Error();    } catch (err) {      var matches = ('' + err.stack).match(        /(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g,      );      if (matches) {        $parcel$bundleURL = matches[0];      } else {        return distDir + url;      }    }  }  return new URL(distDir + url, $parcel$bundleURL).toString();}newRequire.resolve = $parcel$resolve;
+
+  Object.defineProperty(newRequire, 'root', {
+    get: function () {
+      return globalObject[parcelRequireName];
+    },
+  });
+
+  globalObject[parcelRequireName] = newRequire;
+
+  for (var i = 0; i < entry.length; i++) {
+    newRequire(entry[i]);
+  }
+
+  if (mainEntry) {
+    // Expose entry point to Node, AMD or browser globals
+    // Based on https://github.com/ForbesLindesay/umd/blob/master/template.js
+    var mainExports = newRequire(mainEntry);
+
+    // CommonJS
+    if (typeof exports === 'object' && typeof module !== 'undefined') {
+      module.exports = mainExports;
+
+      // RequireJS
+    } else if (typeof define === 'function' && define.amd) {
+      define(function () {
+        return mainExports;
+      });
+    }
+  }
+})({"iVvlR":[function(require,module,exports,__globalThis) {
+var global = arguments[3];
+var HMR_HOST = null;
+var HMR_PORT = null;
+var HMR_SERVER_PORT = 1234;
+var HMR_SECURE = false;
+var HMR_ENV_HASH = "d6ea1d42532a7575";
+var HMR_USE_SSE = false;
+module.bundle.HMR_BUNDLE_ID = "6391a65e6c33350c";
+"use strict";
+/* global HMR_HOST, HMR_PORT, HMR_SERVER_PORT, HMR_ENV_HASH, HMR_SECURE, HMR_USE_SSE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
+import type {
+  HMRAsset,
+  HMRMessage,
+} from '@parcel/reporter-dev-server/src/HMRServer.js';
+interface ParcelRequire {
+  (string): mixed;
+  cache: {|[string]: ParcelModule|};
+  hotData: {|[string]: mixed|};
+  Module: any;
+  parent: ?ParcelRequire;
+  isParcelRequire: true;
+  modules: {|[string]: [Function, {|[string]: string|}]|};
+  HMR_BUNDLE_ID: string;
+  root: ParcelRequire;
+}
+interface ParcelModule {
+  hot: {|
+    data: mixed,
+    accept(cb: (Function) => void): void,
+    dispose(cb: (mixed) => void): void,
+    // accept(deps: Array<string> | string, cb: (Function) => void): void,
+    // decline(): void,
+    _acceptCallbacks: Array<(Function) => void>,
+    _disposeCallbacks: Array<(mixed) => void>,
+  |};
+}
+interface ExtensionContext {
+  runtime: {|
+    reload(): void,
+    getURL(url: string): string;
+    getManifest(): {manifest_version: number, ...};
+  |};
+}
+declare var module: {bundle: ParcelRequire, ...};
+declare var HMR_HOST: string;
+declare var HMR_PORT: string;
+declare var HMR_SERVER_PORT: string;
+declare var HMR_ENV_HASH: string;
+declare var HMR_SECURE: boolean;
+declare var HMR_USE_SSE: boolean;
+declare var chrome: ExtensionContext;
+declare var browser: ExtensionContext;
+declare var __parcel__import__: (string) => Promise<void>;
+declare var __parcel__importScripts__: (string) => Promise<void>;
+declare var globalThis: typeof self;
+declare var ServiceWorkerGlobalScope: Object;
+*/ var OVERLAY_ID = '__parcel__error__overlay__';
+var OldModule = module.bundle.Module;
+function Module(moduleName) {
+    OldModule.call(this, moduleName);
+    this.hot = {
+        data: module.bundle.hotData[moduleName],
+        _acceptCallbacks: [],
+        _disposeCallbacks: [],
+        accept: function(fn) {
+            this._acceptCallbacks.push(fn || function() {});
+        },
+        dispose: function(fn) {
+            this._disposeCallbacks.push(fn);
+        }
+    };
+    module.bundle.hotData[moduleName] = undefined;
+}
+module.bundle.Module = Module;
+module.bundle.hotData = {};
+var checkedAssets /*: {|[string]: boolean|} */ , disposedAssets /*: {|[string]: boolean|} */ , assetsToDispose /*: Array<[ParcelRequire, string]> */ , assetsToAccept /*: Array<[ParcelRequire, string]> */ , bundleNotFound = false;
+function getHostname() {
+    return HMR_HOST || (typeof location !== 'undefined' && location.protocol.indexOf('http') === 0 ? location.hostname : 'localhost');
+}
+function getPort() {
+    return HMR_PORT || (typeof location !== 'undefined' ? location.port : HMR_SERVER_PORT);
+}
+// eslint-disable-next-line no-redeclare
+let WebSocket = globalThis.WebSocket;
+if (!WebSocket && typeof module.bundle.root === 'function') try {
+    // eslint-disable-next-line no-global-assign
+    WebSocket = module.bundle.root('ws');
+} catch  {
+// ignore.
+}
+var hostname = getHostname();
+var port = getPort();
+var protocol = HMR_SECURE || typeof location !== 'undefined' && location.protocol === 'https:' && ![
+    'localhost',
+    '127.0.0.1',
+    '0.0.0.0'
+].includes(hostname) ? 'wss' : 'ws';
+// eslint-disable-next-line no-redeclare
+var parent = module.bundle.parent;
+if (!parent || !parent.isParcelRequire) {
+    // Web extension context
+    var extCtx = typeof browser === 'undefined' ? typeof chrome === 'undefined' ? null : chrome : browser;
+    // Safari doesn't support sourceURL in error stacks.
+    // eval may also be disabled via CSP, so do a quick check.
+    var supportsSourceURL = false;
+    try {
+        (0, eval)('throw new Error("test"); //# sourceURL=test.js');
+    } catch (err) {
+        supportsSourceURL = err.stack.includes('test.js');
+    }
+    var ws;
+    if (HMR_USE_SSE) ws = new EventSource('/__parcel_hmr');
+    else try {
+        // If we're running in the dev server's node runner, listen for messages on the parent port.
+        let { workerData, parentPort } = module.bundle.root('node:worker_threads') /*: any*/ ;
+        if (workerData !== null && workerData !== void 0 && workerData.__parcel) {
+            parentPort.on('message', async (message)=>{
+                try {
+                    await handleMessage(message);
+                    parentPort.postMessage('updated');
+                } catch  {
+                    parentPort.postMessage('restart');
+                }
+            });
+            // After the bundle has finished running, notify the dev server that the HMR update is complete.
+            queueMicrotask(()=>parentPort.postMessage('ready'));
+        }
+    } catch  {
+        if (typeof WebSocket !== 'undefined') try {
+            ws = new WebSocket(protocol + '://' + hostname + (port ? ':' + port : '') + '/');
+        } catch (err) {
+            // Ignore cloudflare workers error.
+            if (err.message && !err.message.includes('Disallowed operation called within global scope')) console.error(err.message);
+        }
+    }
+    if (ws) {
+        // $FlowFixMe
+        ws.onmessage = async function(event /*: {data: string, ...} */ ) {
+            var data /*: HMRMessage */  = JSON.parse(event.data);
+            await handleMessage(data);
+        };
+        if (ws instanceof WebSocket) {
+            ws.onerror = function(e) {
+                if (e.message) console.error(e.message);
+            };
+            ws.onclose = function() {
+                console.warn("[parcel] \uD83D\uDEA8 Connection to the HMR server was lost");
+            };
+        }
+    }
+}
+async function handleMessage(data /*: HMRMessage */ ) {
+    checkedAssets = {} /*: {|[string]: boolean|} */ ;
+    disposedAssets = {} /*: {|[string]: boolean|} */ ;
+    assetsToAccept = [];
+    assetsToDispose = [];
+    bundleNotFound = false;
+    if (data.type === 'reload') fullReload();
+    else if (data.type === 'update') {
+        // Remove error overlay if there is one
+        if (typeof document !== 'undefined') removeErrorOverlay();
+        let assets = data.assets;
+        // Handle HMR Update
+        let handled = assets.every((asset)=>{
+            return asset.type === 'css' || asset.type === 'js' && hmrAcceptCheck(module.bundle.root, asset.id, asset.depsByBundle);
+        });
+        // Dispatch a custom event in case a bundle was not found. This might mean
+        // an asset on the server changed and we should reload the page. This event
+        // gives the client an opportunity to refresh without losing state
+        // (e.g. via React Server Components). If e.preventDefault() is not called,
+        // we will trigger a full page reload.
+        if (handled && bundleNotFound && assets.some((a)=>a.envHash !== HMR_ENV_HASH) && typeof window !== 'undefined' && typeof CustomEvent !== 'undefined') handled = !window.dispatchEvent(new CustomEvent('parcelhmrreload', {
+            cancelable: true
+        }));
+        if (handled) {
+            console.clear();
+            // Dispatch custom event so other runtimes (e.g React Refresh) are aware.
+            if (typeof window !== 'undefined' && typeof CustomEvent !== 'undefined') window.dispatchEvent(new CustomEvent('parcelhmraccept'));
+            await hmrApplyUpdates(assets);
+            hmrDisposeQueue();
+            // Run accept callbacks. This will also re-execute other disposed assets in topological order.
+            let processedAssets = {};
+            for(let i = 0; i < assetsToAccept.length; i++){
+                let id = assetsToAccept[i][1];
+                if (!processedAssets[id]) {
+                    hmrAccept(assetsToAccept[i][0], id);
+                    processedAssets[id] = true;
+                }
+            }
+        } else fullReload();
+    }
+    if (data.type === 'error') {
+        // Log parcel errors to console
+        for (let ansiDiagnostic of data.diagnostics.ansi){
+            let stack = ansiDiagnostic.codeframe ? ansiDiagnostic.codeframe : ansiDiagnostic.stack;
+            console.error("\uD83D\uDEA8 [parcel]: " + ansiDiagnostic.message + '\n' + stack + '\n\n' + ansiDiagnostic.hints.join('\n'));
+        }
+        if (typeof document !== 'undefined') {
+            // Render the fancy html overlay
+            removeErrorOverlay();
+            var overlay = createErrorOverlay(data.diagnostics.html);
+            // $FlowFixMe
+            document.body.appendChild(overlay);
+        }
+    }
+}
+function removeErrorOverlay() {
+    var overlay = document.getElementById(OVERLAY_ID);
+    if (overlay) {
+        overlay.remove();
+        console.log("[parcel] \u2728 Error resolved");
+    }
+}
+function createErrorOverlay(diagnostics) {
+    var overlay = document.createElement('div');
+    overlay.id = OVERLAY_ID;
+    let errorHTML = '<div style="background: black; opacity: 0.85; font-size: 16px; color: white; position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; padding: 30px; font-family: Menlo, Consolas, monospace; z-index: 9999;">';
+    for (let diagnostic of diagnostics){
+        let stack = diagnostic.frames.length ? diagnostic.frames.reduce((p, frame)=>{
+            return `${p}
+<a href="${protocol === 'wss' ? 'https' : 'http'}://${hostname}:${port}/__parcel_launch_editor?file=${encodeURIComponent(frame.location)}" style="text-decoration: underline; color: #888" onclick="fetch(this.href); return false">${frame.location}</a>
+${frame.code}`;
+        }, '') : diagnostic.stack;
+        errorHTML += `
+      <div>
+        <div style="font-size: 18px; font-weight: bold; margin-top: 20px;">
+          \u{1F6A8} ${diagnostic.message}
+        </div>
+        <pre>${stack}</pre>
+        <div>
+          ${diagnostic.hints.map((hint)=>"<div>\uD83D\uDCA1 " + hint + '</div>').join('')}
+        </div>
+        ${diagnostic.documentation ? `<div>\u{1F4DD} <a style="color: violet" href="${diagnostic.documentation}" target="_blank">Learn more</a></div>` : ''}
+      </div>
+    `;
+    }
+    errorHTML += '</div>';
+    overlay.innerHTML = errorHTML;
+    return overlay;
+}
+function fullReload() {
+    if (typeof location !== 'undefined' && 'reload' in location) location.reload();
+    else if (typeof extCtx !== 'undefined' && extCtx && extCtx.runtime && extCtx.runtime.reload) extCtx.runtime.reload();
+    else try {
+        let { workerData, parentPort } = module.bundle.root('node:worker_threads') /*: any*/ ;
+        if (workerData !== null && workerData !== void 0 && workerData.__parcel) parentPort.postMessage('restart');
+    } catch (err) {
+        console.error("[parcel] \u26A0\uFE0F An HMR update was not accepted. Please restart the process.");
+    }
+}
+function getParents(bundle, id) /*: Array<[ParcelRequire, string]> */ {
+    var modules = bundle.modules;
+    if (!modules) return [];
+    var parents = [];
+    var k, d, dep;
+    for(k in modules)for(d in modules[k][1]){
+        dep = modules[k][1][d];
+        if (dep === id || Array.isArray(dep) && dep[dep.length - 1] === id) parents.push([
+            bundle,
+            k
+        ]);
+    }
+    if (bundle.parent) parents = parents.concat(getParents(bundle.parent, id));
+    return parents;
+}
+function updateLink(link) {
+    var href = link.getAttribute('href');
+    if (!href) return;
+    var newLink = link.cloneNode();
+    newLink.onload = function() {
+        if (link.parentNode !== null) // $FlowFixMe
+        link.parentNode.removeChild(link);
+    };
+    newLink.setAttribute('href', // $FlowFixMe
+    href.split('?')[0] + '?' + Date.now());
+    // $FlowFixMe
+    link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+var cssTimeout = null;
+function reloadCSS() {
+    if (cssTimeout || typeof document === 'undefined') return;
+    cssTimeout = setTimeout(function() {
+        var links = document.querySelectorAll('link[rel="stylesheet"]');
+        for(var i = 0; i < links.length; i++){
+            // $FlowFixMe[incompatible-type]
+            var href /*: string */  = links[i].getAttribute('href');
+            var hostname = getHostname();
+            var servedFromHMRServer = hostname === 'localhost' ? new RegExp('^(https?:\\/\\/(0.0.0.0|127.0.0.1)|localhost):' + getPort()).test(href) : href.indexOf(hostname + ':' + getPort());
+            var absolute = /^https?:\/\//i.test(href) && href.indexOf(location.origin) !== 0 && !servedFromHMRServer;
+            if (!absolute) updateLink(links[i]);
+        }
+        cssTimeout = null;
+    }, 50);
+}
+function hmrDownload(asset) {
+    if (asset.type === 'js') {
+        if (typeof document !== 'undefined') {
+            let script = document.createElement('script');
+            script.src = asset.url + '?t=' + Date.now();
+            if (asset.outputFormat === 'esmodule') script.type = 'module';
+            return new Promise((resolve, reject)=>{
+                var _document$head;
+                script.onload = ()=>resolve(script);
+                script.onerror = reject;
+                (_document$head = document.head) === null || _document$head === void 0 || _document$head.appendChild(script);
+            });
+        } else if (typeof importScripts === 'function') {
+            // Worker scripts
+            if (asset.outputFormat === 'esmodule') return import(asset.url + '?t=' + Date.now());
+            else return new Promise((resolve, reject)=>{
+                try {
+                    importScripts(asset.url + '?t=' + Date.now());
+                    resolve();
+                } catch (err) {
+                    reject(err);
+                }
+            });
+        }
+    }
+}
+async function hmrApplyUpdates(assets) {
+    global.parcelHotUpdate = Object.create(null);
+    let scriptsToRemove;
+    try {
+        // If sourceURL comments aren't supported in eval, we need to load
+        // the update from the dev server over HTTP so that stack traces
+        // are correct in errors/logs. This is much slower than eval, so
+        // we only do it if needed (currently just Safari).
+        // https://bugs.webkit.org/show_bug.cgi?id=137297
+        // This path is also taken if a CSP disallows eval.
+        if (!supportsSourceURL) {
+            let promises = assets.map((asset)=>{
+                var _hmrDownload;
+                return (_hmrDownload = hmrDownload(asset)) === null || _hmrDownload === void 0 ? void 0 : _hmrDownload.catch((err)=>{
+                    // Web extension fix
+                    if (extCtx && extCtx.runtime && extCtx.runtime.getManifest().manifest_version == 3 && typeof ServiceWorkerGlobalScope != 'undefined' && global instanceof ServiceWorkerGlobalScope) {
+                        extCtx.runtime.reload();
+                        return;
+                    }
+                    throw err;
+                });
+            });
+            scriptsToRemove = await Promise.all(promises);
+        }
+        assets.forEach(function(asset) {
+            hmrApply(module.bundle.root, asset);
+        });
+    } finally{
+        delete global.parcelHotUpdate;
+        if (scriptsToRemove) scriptsToRemove.forEach((script)=>{
+            if (script) {
+                var _document$head2;
+                (_document$head2 = document.head) === null || _document$head2 === void 0 || _document$head2.removeChild(script);
+            }
+        });
+    }
+}
+function hmrApply(bundle /*: ParcelRequire */ , asset /*:  HMRAsset */ ) {
+    var modules = bundle.modules;
+    if (!modules) return;
+    if (asset.type === 'css') reloadCSS();
+    else if (asset.type === 'js') {
+        let deps = asset.depsByBundle[bundle.HMR_BUNDLE_ID];
+        if (deps) {
+            if (modules[asset.id]) {
+                // Remove dependencies that are removed and will become orphaned.
+                // This is necessary so that if the asset is added back again, the cache is gone, and we prevent a full page reload.
+                let oldDeps = modules[asset.id][1];
+                for(let dep in oldDeps)if (!deps[dep] || deps[dep] !== oldDeps[dep]) {
+                    let id = oldDeps[dep];
+                    let parents = getParents(module.bundle.root, id);
+                    if (parents.length === 1) hmrDelete(module.bundle.root, id);
+                }
+            }
+            if (supportsSourceURL) // Global eval. We would use `new Function` here but browser
+            // support for source maps is better with eval.
+            (0, eval)(asset.output);
+            // $FlowFixMe
+            let fn = global.parcelHotUpdate[asset.id];
+            modules[asset.id] = [
+                fn,
+                deps
+            ];
+        }
+        // Always traverse to the parent bundle, even if we already replaced the asset in this bundle.
+        // This is required in case modules are duplicated. We need to ensure all instances have the updated code.
+        if (bundle.parent) hmrApply(bundle.parent, asset);
+    }
+}
+function hmrDelete(bundle, id) {
+    let modules = bundle.modules;
+    if (!modules) return;
+    if (modules[id]) {
+        // Collect dependencies that will become orphaned when this module is deleted.
+        let deps = modules[id][1];
+        let orphans = [];
+        for(let dep in deps){
+            let parents = getParents(module.bundle.root, deps[dep]);
+            if (parents.length === 1) orphans.push(deps[dep]);
+        }
+        // Delete the module. This must be done before deleting dependencies in case of circular dependencies.
+        delete modules[id];
+        delete bundle.cache[id];
+        // Now delete the orphans.
+        orphans.forEach((id)=>{
+            hmrDelete(module.bundle.root, id);
+        });
+    } else if (bundle.parent) hmrDelete(bundle.parent, id);
+}
+function hmrAcceptCheck(bundle /*: ParcelRequire */ , id /*: string */ , depsByBundle /*: ?{ [string]: { [string]: string } }*/ ) {
+    checkedAssets = {};
+    if (hmrAcceptCheckOne(bundle, id, depsByBundle)) return true;
+    // Traverse parents breadth first. All possible ancestries must accept the HMR update, or we'll reload.
+    let parents = getParents(module.bundle.root, id);
+    let accepted = false;
+    while(parents.length > 0){
+        let v = parents.shift();
+        let a = hmrAcceptCheckOne(v[0], v[1], null);
+        if (a) // If this parent accepts, stop traversing upward, but still consider siblings.
+        accepted = true;
+        else if (a !== null) {
+            // Otherwise, queue the parents in the next level upward.
+            let p = getParents(module.bundle.root, v[1]);
+            if (p.length === 0) {
+                // If there are no parents, then we've reached an entry without accepting. Reload.
+                accepted = false;
+                break;
+            }
+            parents.push(...p);
+        }
+    }
+    return accepted;
+}
+function hmrAcceptCheckOne(bundle /*: ParcelRequire */ , id /*: string */ , depsByBundle /*: ?{ [string]: { [string]: string } }*/ ) {
+    var modules = bundle.modules;
+    if (!modules) return;
+    if (depsByBundle && !depsByBundle[bundle.HMR_BUNDLE_ID]) {
+        // If we reached the root bundle without finding where the asset should go,
+        // there's nothing to do. Mark as "accepted" so we don't reload the page.
+        if (!bundle.parent) {
+            bundleNotFound = true;
+            return true;
+        }
+        return hmrAcceptCheckOne(bundle.parent, id, depsByBundle);
+    }
+    if (checkedAssets[id]) return null;
+    checkedAssets[id] = true;
+    var cached = bundle.cache[id];
+    if (!cached) return true;
+    assetsToDispose.push([
+        bundle,
+        id
+    ]);
+    if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
+        assetsToAccept.push([
+            bundle,
+            id
+        ]);
+        return true;
+    }
+    return false;
+}
+function hmrDisposeQueue() {
+    // Dispose all old assets.
+    for(let i = 0; i < assetsToDispose.length; i++){
+        let id = assetsToDispose[i][1];
+        if (!disposedAssets[id]) {
+            hmrDispose(assetsToDispose[i][0], id);
+            disposedAssets[id] = true;
+        }
+    }
+    assetsToDispose = [];
+}
+function hmrDispose(bundle /*: ParcelRequire */ , id /*: string */ ) {
+    var cached = bundle.cache[id];
+    bundle.hotData[id] = {};
+    if (cached && cached.hot) cached.hot.data = bundle.hotData[id];
+    if (cached && cached.hot && cached.hot._disposeCallbacks.length) cached.hot._disposeCallbacks.forEach(function(cb) {
+        cb(bundle.hotData[id]);
+    });
+    delete bundle.cache[id];
+}
+function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
+    // Execute the module.
+    bundle(id);
+    // Run the accept callbacks in the new version of the module.
+    var cached = bundle.cache[id];
+    if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
+        let assetsToAlsoAccept = [];
+        cached.hot._acceptCallbacks.forEach(function(cb) {
+            let additionalAssets = cb(function() {
+                return getParents(module.bundle.root, id);
+            });
+            if (Array.isArray(additionalAssets) && additionalAssets.length) assetsToAlsoAccept.push(...additionalAssets);
+        });
+        if (assetsToAlsoAccept.length) {
+            let handled = assetsToAlsoAccept.every(function(a) {
+                return hmrAcceptCheck(a[0], a[1]);
+            });
+            if (!handled) return fullReload();
+            hmrDisposeQueue();
+        }
+    }
+}
+
+},{}],"0ODZK":[function(require,module,exports,__globalThis) {
+if ('serviceWorker' in navigator) window.addEventListener('load', ()=>{
+    navigator.serviceWorker.register(require("fefd93bd2a7ab58d")).then((registration)=>{
+        console.log('Service Worker registriert mit Erfolg:', registration);
+    }).catch((error)=>{
+        console.log('Fehler bei der Registrierung des Service Workers:', error);
+    });
+});
+
+},{"fefd93bd2a7ab58d":"7xtlq"}],"7xtlq":[function(require,module,exports,__globalThis) {
+module.exports = module.bundle.resolve("service-worker.js");
+
+},{}]},["iVvlR","0ODZK"], "0ODZK", "parcelRequire94c2", {}, "./", "/")
+
+</script>
+    <!-- Web-App installieren -->
+
+    <!-- NOJavascript -->
+    <noscript>Die Podcast App geht nur, wenn Javascript aktiviert ist!</noscript>
+    <!-- NOJavascript -->
+
+    <!-- Icon Libary -->
+    <script src="https://kit.fontawesome.com/a2e873c6bb.js" charset="utf-8" crossorigin="anonymous"></script>
+    <!-- Icon Libary -->
+
+</body><!-- Body Bereich--><!-- Javascript Source --></html>

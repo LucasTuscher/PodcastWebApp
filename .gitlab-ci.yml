@@ -1,0 +1,41 @@
+stages:
+  - build
+  - deploy
+
+build-project-frontend:
+  stage: build
+  image: node:22-alpine
+  variables:
+    PARCEL_WORKERS: 0 # Fix für Segmentation Fault
+  script:
+    - cd frontend
+    - npm install     # Installiert alle Abhängigkeiten
+    - npm run build   # Baut das Projekt mit Parcel
+  artifacts:
+    paths:
+      - frontend/prod/         # Speichert das gebaute Frontend
+
+deploy-docker-image:
+  stage: deploy
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  script:
+    - echo "Writing Docker image to registry $CI_REGISTRY_IMAGE"
+    - /kaniko/executor
+      --context "${CI_PROJECT_DIR}/frontend"
+      --dockerfile "${CI_PROJECT_DIR}/frontend/dockerfile"
+      --destination "${CI_REGISTRY_IMAGE}:latest"
+
+
+deploy-docker-image-backend:
+  stage: deploy
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  script:
+    - echo Writing docker image to registry $CI_REGISTRY_IMAGE
+    - /kaniko/executor
+      --context "${CI_PROJECT_DIR}/backend"
+      --dockerfile "${CI_PROJECT_DIR}/backend/dockerfile"
+      --destination ${CI_REGISTRY_IMAGE}/backend:latest

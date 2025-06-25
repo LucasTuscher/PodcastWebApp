@@ -1,0 +1,60 @@
+/* Imports */
+@import url("fonts.css");
+@import url("variables/global-var.css");
+@import url("scrollbar.css");
+@import url("selection.css");
+@import url("helper/loading-animation.css");
+@import url("layout/podcastdetails.css");
+@import url("layout/slider.css");
+@import url("category.css");
+@import url("player/player.css");
+@import url("layout/sidebar.css");
+@import url("account/favorites.css");
+@import url("categories.css");
+@import url("layout/credits.css");
+@import url("search/random-podcast.css");
+@import url("search/podcast-search.css");
+@import url("player/player-fullscreen-modal.css");
+@import url("account/login.css");
+@import url("account/register.css");
+@import url("account/user-administration.css");
+/* Imports */
+
+/* Document */
+* {padding:0;margin:0;border:0;}
+html {font-family:var(--document-main-fonts);}
+li {list-style:none;}
+.htmlclass {background-color:var(--document-main-background-color);color:white;}
+body, button, input, select, textarea {-moz-font-feature-settings:"kern";-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-synthesis:none;}
+.line-container {border-bottom:1px solid rgb(255, 255, 255, 0.1);width:100%;height:1px;}
+.htmlclass {overflow:auto;}
+.htmlclass.active {overflow:hidden;}
+/* Document */
+
+/* Responsive Navigation */
+.responsive-navigation-main {display:none}
+/* Responsive Navigation */
+
+/* Main Bereich */
+.main-container {position:relative;margin-left:var(--sidebar-width);height:100%;}
+.main-content {position:relative;padding-top:35px;padding-bottom:35px;padding-left:45px;padding-right:45px;max-width:1700px;margin:0 auto;}
+.main-body-container {justify-content:left;display:flex;width:auto;flex-direction:column;margin-top:18px;}
+.main-body-content {display:flex;justify-content:left;flex-direction:column;}
+.main-body-title {text-align:left;color:white;font-family:"SF Pro Display BoldItalic";font-size:34px;margin-bottom:8px;line-height:1;}
+.main-body-title-container {display:flex;justify-content:space-between;}
+.main-body-title-right-container {display:flex;align-items:center;}
+.main-body-title-right-container i {font-size:28px;color:#79b4c9;margin-bottom:8px;}
+.main-body-line-container {border-bottom:1px solid rgb(255, 255, 255, 0.1);width:100%;height:1px;}
+.main-body-main_page-slider-container {margin-bottom:50px;}
+.main-body-main_page-container {width:100%;display:flex;justify-content:left;text-align:left;margin-top:35px;}
+.main-body-main_page-content {width:100%;}
+.main-body-main_page-categories-help-container {width:100%;display:flex;justify-content:left;flex-direction:column;z-index:-1;margin-bottom:120px;}
+.main-body-main_page-categories-help-title {font-size:17px;color:rgb(255, 255, 255, 0.7);font-family:"SF Pro Display Bold";margin-bottom:10px;}
+.main-body-main_page-categories-help-content {width:100%;margin-top:8px;display:flex;display:flex;justify-content:left;}
+.main-body-main_page-categories-help-list {display: flex;flex-wrap: wrap;justify-content: space-between; width:100%;}
+.main-body-main_page-categories-help-listitem {background:#1a2431;flex:0 0 31.55%;box-sizing:border-box;margin-bottom:20px;text-align:center;position:relative;border-radius:12px;height:50px;cursor:pointer;transition:all 250ms ease-in-out;outline:2px solid transparent;}
+.main-body-main_page-categories-help-listitem:hover {outline:2px solid #79b4c9;}
+.main-body-main_page-categories-help-listitem-container {align-items:center;display:flex;justify-content:space-between;height:100%;text-decoration:none;}
+.main-body-main_page-categories-help-listitem-title {color:#79b4c9;padding-left:20px;font-size:17px;}
+.main-body-main_page-categories-help-listitem-icon {color:#79b4c9;padding-right:20px;font-size:16px;}
+/* Main Bereich */

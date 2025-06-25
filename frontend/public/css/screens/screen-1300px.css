@@ -1,0 +1,15 @@
+@media screen and (max-width: 1300px) {
+
+    /* Podcast Details */
+    .podcastdetail-main-container {margin-top:0px;}
+    .podcastdetail-main-content {flex-direction:column;}
+    .podcastdetail-left-container {width:auto;margin-bottom:10px;display:flex;justify-content:center;}
+    .podcastdetail-right-container {width:100%;margin-left:0px;flex-direction:column;}
+    .podcastdetail-right-container {height:220px;margin-top:38px;}
+    .podcastdetail-right-content {width:100%;flex-direction:column;}
+    .content-title {margin-top:0px;}
+    .content-author {padding-bottom:0px;font-size:30px;}
+    .content-description-container {margin-top:24px;}
+    /* Podcast Details */
+
+}

@@ -1,0 +1,9 @@
+/* Categories */
+.main-categories-container {width: 100%;display: flex;justify-content: flex-start;align-items: center;flex-wrap: wrap;gap: 30px;box-sizing: border-box;margin-bottom:90px}
+.main-categories-content {width:100%;}
+.main-body-categories-title {font-family:"SF Pro Display Bold";font-size:22px;margin-bottom:6px;}
+.categories-layout-main-container {display: flex;flex-wrap: wrap;gap: 16px;}
+.categories-layout {width: calc(33.33% - 11px);height: 110px;border-radius: 15px;background-color: #1a2431;box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);transition: transform 0.19s ease-in-out;overflow: hidden;position: relative;}
+.categories-layout:hover {transform: scale(1.03);box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);}
+.categories-layout p {position:absolute;bottom: 12px;left: 12px;margin: 0;font-size: 17px;color: rgba(255, 255, 255, 0.75);}
+/* Categories */

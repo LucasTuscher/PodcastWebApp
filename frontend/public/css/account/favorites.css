@@ -1,0 +1,11 @@
+/* Favorites */
+.favorites-list-container {margin-top:18px;display:flex;justify-content:left;flex-direction:column;}
+.favorites-list-title {text-align:left;color:white;font-family:"SF Pro Display Bold";font-size:28px;margin-bottom:28px;line-height:1;}
+.favorites-list {display: grid;grid-template-columns: repeat(7, 1fr);gap: 20px;}
+.favorite-item {width: 100%;height: auto;display: flex;flex-direction: column;align-items: center;position:relative;}
+.podcast-image {width: 100%; height: auto; border-radius:22px;box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);object-fit: cover; }
+.remove-button {position:absolute;line-height:1; background: #090d10;color: #79b4c9;font-size: 17px;right:14px;width: 25px;top:14px;text-align: center;height: 25px;border-radius: 100%;display: flex;justify-content: center;align-items: center;}
+.no-favorites-list-container {margin-top:18px;display:flex;justify-content:left;flex-direction:column;}
+.no-favorites-list-title {text-align:left;color:white;font-family:"SF Pro Display Bold";font-size:28px;margin-bottom:20px;line-height:1;}
+.no-favorites-list-undertitle {text-align: left;color: rgb(255,255,255, 0.5);font-family: "SF Pro Display Medium";font-size: 14px;margin-bottom: 20px;line-height: 1;}
+/* Favorites */

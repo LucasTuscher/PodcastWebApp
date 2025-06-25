@@ -1,0 +1,23 @@
+/* Podcast Search */
+.podcast-main-container {width:100%;display:flex;justify-content:left;flex-direction:column;margin-top:45px;margin-bottom:120px;}
+.podcast-search-content {width:100%;height:54px;border-radius:14px;background:#10151b;border:1px solid rgb(255, 255, 255, 0.1);border-radius:20px;display:flex;flex-direction:row;align-items:center;}
+.podcast-search-content.focused {outline:4px solid #79B4C9;}
+.podcast-search-icon {font-size:18px;display:flex;justify-content:center;align-content:center;padding-left:20px;padding-right:16px;height:100%;align-items:center;color:#79b4c9;}
+.podcast-search-input {width: 100%;height: 100%;font-size:16px;font-family: "SF Pro Display Medium";background: transparent;color: rgb(255, 255, 255, 0.5);}
+.podcast-search-input:focus {border:0;outline:0;}
+.podcast-search-input-container {width:100%;height:100%;border-radius:12px;padding-right:12px;font-size:13px;}
+.podcast-search-close-icon {font-size:16px;color:rgb(255, 255, 255, 0.25);padding-right:10px;display:none;}
+.podcast-search-close-button {background:transparent;color:rgb(255, 255, 255, 0.55);}
+.podcast-search-content:focus {outline:3px solid #79B4C9;}
+.podcast-search-result-content {margin-top:45px;display:flex;justify-content:left;flex-direction:column;}
+.podcast-search-result-podcast-item {width:100%;height:60px;background:#10151b;border-radius:15px;transition:background 200ms ease-in-out;}
+.podcast-search-result-podcast-item:hover {background:#182637;}
+.result-podcast-new-background {background:transparent;}
+.podcast-search-result-podcast-left-container {display:flex;justify-content:left;align-items:center;height:100%;}
+.podcast-search-result-podcast-image-container {padding-left:10px;display:flex;justify-content:left;align-items:center;height:100%;}
+.podcast-search-result-podcast-image {height:45px;width:45px;border-radius:10px;}
+.podcast-search-result-podcast-title {margin-left:20px;overflow:hidden;text-overflow: ellipsis;white-space:nowrap;width:100%;padding-right:30px;}
+.podcast-search-result-podcast-title h1 {font-size:15px;color:rgba(255,255,255,0.5);overflow:hidden;text-overflow:ellipsis;white-space: nowrap;}
+.podcast-search-button {background-color: #79B4C9;margin-right:20px;margin-left:20px;border: none;color: #fff;padding: 7px 20px;border-radius: 14px;cursor: pointer;font-size: 16px;transition: all 300ms ease-in-out;}
+.podcast-search-button:hover {background-color: #5a8f9d;}
+/* Podcast Search */

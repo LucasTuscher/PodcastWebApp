@@ -1,0 +1,6 @@
+/* Scollbar */
+html::-webkit-scrollbar {width:18px;}
+html::-webkit-scrollbar-track {background-color:#0d1118;border-radius:0px;}
+html::-webkit-scrollbar-thumb {border-radius:100px;border:6px solid #0d1118;background-color:#79b4c9ae;-webkit-background-clip:content-box;background-clip:content-box;transition:all 250ms ease-in-out;}
+html::-webkit-scrollbar-thumb:hover {background:#79B4C9;}
+/* Scrollbar */

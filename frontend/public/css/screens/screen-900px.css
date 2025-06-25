@@ -1,0 +1,9 @@
+@media screen and (max-width:900px) {
+
+    /* Root */
+    :root {
+        --sidebar-width:235px;
+    }
+    /* Root */
+
+}

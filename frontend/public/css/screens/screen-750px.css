@@ -1,0 +1,26 @@
+@media screen and (max-width: 750px) {
+
+    /* Player Fullscreen Modal */
+    .player-fullscreen-close-container {position:absolute;left:25px;top:25px;z-index:100;}
+    .player-fullscreen-close-icon-sys {font-size:25px;color:rgb(255, 255, 255, 0.45);}
+    .player-fullscreen-main-container {position:absolute;top:0;left:0px;right:0px;bottom:0;width:100%;height:100%;}
+    .player-fullscreen-inner-container {min-width:85%;min-height:100%;margin:0 auto;display:flex;flex-direction:column;justify-content:center;}
+    .player-fullscreen-inner-top-container {position:absolute;top:135px;width:85%;}
+    .player-fullscreen-inner-bottom-container {position:absolute;bottom:70px;width:85%;}
+    .player-fullscreen-inner-musik_icon-container {background:#1a2431;height:350px;width:350px;border-radius:22px;display:flex;align-items:center;justify-content:center;margin-bottom:42px;}
+    .player-fullscreen-inner-musik_icon {color:rgb(255, 255, 255, 0.15);font-size:160px;}
+    /* Player Fullscreen Modal */
+
+    /* Slider */
+    .slider { --items-per-screen: 2;}
+    /* Slider */
+
+    /* Category */
+    .category-podcast-list {display:grid;grid-template-columns: repeat(2, 1fr);gap: 16px;}
+    /* Category */
+
+    /* Favorites */
+    .favorites-list {display:grid;grid-template-columns: repeat(3, 1fr);gap: 16px;}
+    /* Favorites */
+
+}

@@ -1,0 +1,25 @@
+@media screen and (max-width: 1000px) {
+
+    /* Slider */
+    .slider {--items-per-screen: 3;}
+    /* Slider */
+
+    /* Settings */
+    .settings-content {max-width:700px;padding:0px 25px;}
+    .settings-close-container {left:18px;top:18px;height:23px;width:23px;}
+    .settings-close-icon {font-size:14px;}
+    .settings-modal.title {font-size:27px;margin-bottom:9px;}
+    .settings-modal.modal-custom-colors {justify-content:left;margin-top:40px;margin-bottom:50px;flex-direction:column;}
+    .settings-modal.modal-custom-colors .modal-left {margin-bottom:20px;}
+    .modal-undertitle {font-size:20px;}
+    .under-color-input-title {font-size:16px;}
+    .settings-normal-text {font-size:14px;font-family:"SF Pro Display Medium";color:rgb(255, 255, 255, 0.75);}
+    /* Settings */
+
+    /* Credits */
+    .credits-title {font-size:29px;}
+    .credits-undertitle {font-size:17px;}
+    .credits-list-listitem-text {font-size:17px;}
+    /* Credits */
+
+}

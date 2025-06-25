@@ -1,0 +1,21 @@
+/* Global Variablen */
+:root {
+    /* Globale CSS Variablen */
+    --document-main-fonts:"SF Pro Display Semibold";
+    --document-main-background-color:#121922;
+
+    /* Sidebar Variablen */
+    --sidebar-background-color:#0d1116;
+    --sidebar-border-right:1px solid rgb(255, 255, 255, 0.1);
+    --sidebar-width:265px;
+    --sidebar-height:100%;
+
+    /* Podcast Player */
+    --podcast-player-background-color:#0d1116;
+
+    /* Slider Variablen */
+    --handle-size:3rem;
+    --img-gap:.30rem;
+
+}
+/* Global Variablen */

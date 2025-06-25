@@ -1,0 +1,16 @@
+/* Random Podcast */
+.random-podcast-main-container {margin-top:18px;display:flex;justify-content:left;width:100%;}
+.random-podcast-main-content {display:flex;justify-content:left;flex-direction:column;width:100%;}
+.random-podcast-title {text-align:left;color:white;font-family:"SF Pro Display Bold";font-size:30px;margin-bottom:18px;line-height:1;}
+.random-podcast-undertitle {text-align:left;color:rgb(255, 255, 255, 0.6);font-family:"SF Pro Display Medium";font-size:17px;line-height:1;margin-bottom:35px;}
+.random-podcast-button {align-items: center;height: 32px;padding: 0 15px;width:200px;background: #79b4c9;border-radius: 8px;display: flex;justify-content: center; color: white;transition: all 500ms ease-in-out;}
+.random-podcast-podcast-info-container {margin-top:45px;display:flex;justify-content:left;width:100%;}
+.random-podcast-podcast-infoitem {background:#10141a;border-radius:22px;padding:18px;border:1px solid rgb(255, 255, 255, 0.1);display:flex;flex-direction:row;transition:all 300ms ease-in-out;width:100%;box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .3);position:relative;overflow:hidden;cursor: pointer;}
+.random-podcast-podcast-infoitem:hover {border:1px solid #79b4c9;}
+.random-podcast-podcast-image-container {display:flex;justify-content:left;align-items:center;}
+.random-podcast-image {height:62px;width:62px;border-radius:8px;display:flex;align-items:center;}
+.random-podcast-podcast-title-container {display:flex;justify-content:left;margin-left:20px;align-items:center;flex-direction:column;text-align:left;width:100%;margin-right:30px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.random-podcast-podcast-title-distance {display:flex;justify-content:left;flex-direction:column;text-align:left;margin:auto 0;width:100%;}
+.random-podcast-podcast-title {font-size:19px;color:white;font-family:"SF Pro Display Bold", sans-serif;padding-bottom:2px;text-align:left;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 100%;}
+.random-podcast-podcast-desc {font-size:15px;color: rgba(255, 255, 255, 0.5);padding-top:2px;font-family: "SF Pro Display Medium", sans-serif;text-align:left;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; width: 100%;}
+/* Random Podcast */

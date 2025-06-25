@@ -1,0 +1,11 @@
+@media screen and (max-width: 1650px) {
+
+    /* Category */
+    .category-podcast-list {display:grid;grid-template-columns: repeat(5, 1fr);gap: 16px;}
+    /* Category */
+
+    /* Favorites */
+    .favorites-list {display:grid;grid-template-columns: repeat(6, 1fr);gap: 16px;}
+    /* Favorites */
+
+}

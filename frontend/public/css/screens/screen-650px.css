@@ -1,0 +1,69 @@
+@media screen and (max-width: 650px) {
+
+    /* Main */
+    .main-container {margin-left:0px;}
+    .main-content {padding-bottom:0px;padding-left:30px;padding-right:30px;}
+    .main-body-title {font-size:28px;}
+    /* Main */
+
+    /* Main Player */
+    .main-podcast-player {left:30px;right:30px;}
+    .player-background {position: fixed;bottom: 0;width: 100%;right: 0;height: 102px;left:0;z-index: 1;}
+    .main-podcast-player-right-container {margin-right:28px;}
+    .podcast-player-play {margin:0px 20px;}
+    /* Main Player */
+
+    /* Sidebar */
+    .sidebar-navigation {transform:translateX(-100%);transition:transform 400ms ease-in-out;z-index:1000;}
+    .sidebar-main-container {justify-content:normal;}
+    .sidebar-navigation.opensidebar {display:flex;transform:translateX(0);transition:transform 400ms ease-in-out;border:1px solid rgb(255, 255, 255, 0.1);}
+    .sidebar-main-container {margin-top:18px;}
+    .sidebar-close-responsive-container {display:flex;justify-content:left;width:100%;text-align:left;}
+    .sidebar-close-responsive-content {display:flex;justify-content:left;width:100%;text-align:left;}
+    .sidebar-close-responsive-icon {font-size:18px;margin-bottom:15px;color:rgb(255, 255, 255, 0.6);}
+    .sidebar-close-responsive-content {display:flex;justify-content:left;width:100%;text-align:left;}
+    .sidebar-close-responsive-icon {font-size:18px;margin-bottom:15px;color:rgb(255, 255, 255, 0.6);background:transparent;}
+    /* Sidebar */
+
+    /* Slider */
+    .handle {position:absolute;display:flex;height:100%;color:rgb(255, 255, 255, 0.4);font-size:19px;align-items:center;}
+    .left-handle {height:100%;top:0;left:-20px;transition: all 0.1s cubic-bezier(0.4, 0, 1, 1);}
+    .right-handle {height:100%;top:0;right:0;right:-20px;transition: all 0.1s cubic-bezier(0.4, 0, 1, 1);}
+    .left-handle:active, .left-handle:focus {opacity: 1;transform: scale(.9);left:-24px;}
+    .right-handle:active, .right-handle:focus {opacity: 1;transform: scale(.9);right:-24px;}
+    .slider {--items-per-screen: 3;}
+    /* Slider */
+
+    /* Responsive Navigation */
+    .responsive-navigation-main {height:54px;position:fixed;top:0;left:0;right:0;background:#0d1116;display:block;z-index:100;}
+    .responsive-navigation-content {height:100%;display:flex;justify-content:center;align-items:center;margin:0 30px}
+    .responsive-navigation-left-container {width:100%;display:flex;justify-content:left;text-align:left;height:100%;align-items:center;}
+    .responsive-navigation-left-content {height:100%;display:flex;align-items:center;justify-content:left;}
+    .responsive-navigation-left-icon {font-size:20px;opacity:0.8;}
+    .responsive-navigation-center-container {width:100%;display:flex;justify-content:center;text-align:center;height:100%;align-items:center;}
+    .responsive-navigation-center-content {height:100%;display:flex;align-items:center;justify-content:center;}
+    .responsive-navigation-center-title {font-size:22px;font-family:"SF Pro Display HeavyItalic";text-align:center;display:flex;}
+    .responsive-navigation-right-container {width:100%;display:flex;justify-content:right;text-align:right;height:100%;align-items:center;}
+    .responsive-navigation-right-content {width:100%;height:100%;display:flex;align-items:center;justify-content:right;}
+    .responsive-navigation-right-anker {color:white;background:transparent;}
+    .responsive-navigation-right-icon {font-size:18px;opacity:0.8;}
+    .responsive-navigation-background-container {width:100%;height:100%;background:rgb(0, 0, 0, 0.3);display:flex;justify-content:center;align-items:center;z-index:101;position:fixed;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);top:0;left:0;right:0;bottom:0;opacity:0;visibility:hidden;transition:all 500ms ease-in-out;}
+    .responsive-navigation-background-container.active {opacity:1;visibility:visible;transition:all 500ms ease-in-out;}
+    .responsive-navigation-distance {margin-bottom:25px;}
+    /* Responsive Navigation */
+
+    /* Podcast Details */
+    .podcastdetail-main-container {margin-top:10px;}
+    .podcastdetail-left-container {height:240px;}
+    .podcastdetail-img {width:240px;height:240px;}
+    /* Podcast Details */
+
+    /* Category */
+    .category-podcast-list {display:grid;grid-template-columns: repeat(3, 1fr);gap: 16px;}
+    /* Category */
+
+    /* Favorites */
+    .favorites-list {display:grid;grid-template-columns: repeat(3, 1fr);gap: 16px;}
+    /* Favorites */
+
+}

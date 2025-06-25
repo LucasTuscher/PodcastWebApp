@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html class="nojs htmlclass" lang="de">
+
+    <!-- Head Bereich-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="Podcast App, mobile Podcast App, Podcasts anhören, Podcast entdecken, beste Podcasts, Audio-Streaming, Podcast-Player, beliebte Podcasts, Podcast-Verzeichnis">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="author" content="Niclas Tredup, Andreas Lucas Tuscher, Junior">
+        <meta name="description" content="Eine Podcast-App ist eine mobile Anwendung, die es Benutzern ermöglicht, verschiedene Podcasts zu entdecken und anzuhören.">
+        <meta name="robots" content="index, follow">
+
+        <title>Podcast App - Startseite</title>
+
+        <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Podcast App - Entdecke und Höre deine Lieblings-Podcasts">
+        <meta name="twitter:description" content="Unsere Podcast-App ermöglicht es dir, überall und jederzeit Podcasts zu entdecken und zu hören.">
+
+        <!-- Web-App herunterladen (Funktion) -->
+        <link rel="manifest" href="./manifest.json">
+
+        <link type="text/css" rel="stylesheet" href="css/index.css">
+        <link type="text/css" rel="stylesheet" href="css/screens/index-screen.css">
+    </head>
+    <!-- Head Bereich-->
+
+    <!-- Body Bereich -->
+    <body>
+
+        <!-- Sidebar -->
+        <nav class="sidebar-navigation" id="responsiveSidebarContainer" aria-label="Sidebar navigation">
+            <div class="sidebar-main-container">
+                <div class="sidebar-close-responsive-container">
+                    <div class="sidebar-close-responsive-content">
+                        <button aria-label="Close sidebar" class="sidebar-close-responsive-icon fa-solid fa-circle-xmark" id="closeResponsiveMenuIcon"></button>
+                    </div>
+                </div>
+                <div class="sidebar-logo-container">
+                    <div class="sidebar-logo-content">
+                        <h1 class="sidebar-logo-text">Podcast</h1>
+                    </div>
+                </div>
+                <div class="sidebar-search-container">
+                    <div class="sidebar-search-content">
+                        <div class="sidebar-search-icon">
+                            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                        </div>
+                        <div class="sidebar-search-input">
+                            <input id="searchQuery" oninput="searchPodcasts()" type="text" placeholder="Schnellsuche" name="" aria-label="Search podcasts">
+                        </div>
+                        <div class="sidebar-search-close-icon" id="closeButton">
+                            <button class="sidebar-search-close-button" aria-label="Clear search">
+                                <i class="fa-solid fa-circle-xmark"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="sidebar-search-result-container">
+                        <div class="sidebar-search-result-content">
+                            <div class="sidebar-search-result-line" aria-hidden="true"></div>
+                            <p class="sidebar-search-result-status-message" id="statusMessage" aria-live="polite"></p>
+                            <div id="results" class="search-result" style="margin-top:11px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-navigator-container">
+                    <div class="sidebar-navigator-content">
+                        <ul class="sidebar-navigator-list">
+                            <li class="sidebar-navigator-listitem">
+                                <button class="sidebar-navigator-button navigator-button-home" href="#home" onclick="navigateTo('home')" aria-label="Navigate to Home">
+                                    <div class="sidebar-naviagtor-icon-container">
+                                        <i class="sidebar-navigator-icon fa-solid fa-house" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="sidebar-navigator-text-container">
+                                        <p class="sidebar-navigator-text">Startseite</p>
+                                    </div>
+                                </button>
+                            </li>
+                            <li class="sidebar-navigator-listitem">
+                                <button class="sidebar-navigator-button navigator-button-favorite" href="#favorites" onclick="navigateTo('favorites')" aria-label="Navigate to Favorites">
+                                    <div class="sidebar-naviagtor-icon-container">
+                                        <i class="sidebar-navigator-icon fa-solid fa-star" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="sidebar-navigator-text-container">
+                                        <p class="sidebar-navigator-text">Favoriten</p>
+                                    </div>
+                                </button>
+                            </li>
+                            <li class="sidebar-navigator-listitem">
+                                <button class="sidebar-navigator-button navigator-button-categories" href="#categorie" onclick="navigateTo('categories')" aria-label="Navigate to Categories">
+                                    <div class="sidebar-naviagtor-icon-container">
+                                        <i class="sidebar-navigator-icon fa-solid fa-list" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="sidebar-navigator-text-container">
+                                        <p class="sidebar-navigator-text">Kategorien</p>
+                                    </div>
+                                </button>
+                            </li>
+                            <li class="sidebar-navigator-listitem">
+                                <button class="sidebar-navigator-button navigator-button-podcastSearch" href="#podcastSearch" onclick="navigateTo('podcastSearch')" aria-label="Navigate to Filtered Search">
+                                    <div class="sidebar-naviagtor-icon-container">
+                                        <i class="sidebar-navigator-icon fa-solid fa-search" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="sidebar-navigator-text-container">
+                                        <p class="sidebar-navigator-text">Suche</p>
+                                    </div>
+                                </button>
+                            </li>
+                            <li class="sidebar-navigator-listitem">
+                                <button class="sidebar-navigator-button navigator-button-random" href="#randomPodcast" onclick="navigateTo('randomPodcast')" aria-label="Navigate to Random Podcast">
+                                    <div class="sidebar-naviagtor-icon-container">
+                                        <i class="sidebar-navigator-icon fa-solid fa-shuffle" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="sidebar-navigator-text-container">
+                                        <p class="sidebar-navigator-text">Zufallspodcast</p>
+                                    </div>
+                                </button>
+                            </li>
+                            <li class="sidebar-navigator-listitem">
+                                <button class="sidebar-navigator-button navigator-button-account" id="sidebar-navigator-button-isAuth" onclick="handleNavigation()" aria-label="Navigate to login">
+                                    <div class="sidebar-naviagtor-icon-container">
+                                        <i class="sidebar-navigator-icon fa-solid fa-users" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="sidebar-navigator-text-container">
+                                        <p class="sidebar-navigator-text">Account Verwaltung</p>
+                                    </div>
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="sidebar-line-container"></div>
+                        <button class="sidebar-navigator-button sidebar-credits-button" href=#credits" onclick="navigateTo('credits')" aria-label="Navigate to Credits">
+                            <div class="sidebar-naviagtor-icon-container">
+                                <i class="sidebar-navigator-icon sidebar-credits-icon fa-solid fa-user" aria-hidden="true"></i>
+                            </div>
+                            <div class="sidebar-navigator-text-container">
+                                <p class="sidebar-navigator-text sidebar-credits-text">Mitwirkende</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div class="sidebar-main-footer-container">
+                    <div class="footer-main-container">
+                        <button id="logoutButton" class="footer-main-logout-button" onclick="logout()">Ausloggen</button>
+                        <div class="footer-modul-container" style="font-size:11px;margin-top:10px;">
+                            <p> Copyright © 2025 Neuer Gruppenname. Alle Rechte vorbehalten</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Sidebar -->
+
+        <!-- Responsive Navigation -->
+        <div class="responsive-navigation-main">
+            <div class="responsive-navigation-content">
+                <div class="responsive-navigation-left-container">
+                    <div class="responsive-navigation-left-content">
+                        <i class="responsive-navigation-left-icon fa-solid fa-bars-staggered" id="openResponsiveButton"></i>
+                    </div>
+                </div>
+               <div class="responsive-navigation-center-container">
+                    <div class="responsive-navigation-center-content">
+                        <h1 class="responsive-navigation-center-title">Podcast</h1>
+                    </div>
+                </div>
+                <div class="responsive-navigation-right-container">
+                    <div class="responsive-navigation-right-content">
+                        <button class="responsive-navigation-right-anker" href="#podcastSearch" onclick="navigateTo('podcastSearch')">
+                            <i class="responsive-navigation-right-icon fa-solid fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="responsive-navigation-background-container">
+            <div class="responsive-navigation-background"></div>
+        </div>
+        <div class="responsive-navigation-distance"></div>
+        <!-- Responsive Navigation -->
+
+        <!-- Main Bereich -->
+        <main class="main-container">
+            <div class="main-content">
+
+                <div id="app"></div>
+
+                <!-- Main Player -->
+                <div class="player-background">
+                    <div class="background"></div>
+                </div>
+                <div class="main-podcast-player">
+                    <div class="main-podcast-player-container">
+                        <div class="main-podcast-player-layout">
+                            <div class="main-podcast-player-left-container">
+                                <div class="main-podcast-player-left-content">
+                                    <div class="podcast-player-image">
+                                        <i class="podcast-player-image-icon fa-solid fa-podcast"></i>
+                                        <i class="podcast-player-image-player-open-icon fa-solid fa-up-right-and-down-left-from-center" title="Podcast Übersicht öffnen"></i>
+                                        <img id="player-image" style="display:none;" src="placeholder.png" alt="Podcast Image">
+                                    </div>
+                                    <div class="podcast-player-title">
+                                        <h2 id="player-title" style="display:none;"></h2>
+                                        <p id="player-not-active">-----</p>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-podcast-player-right-container">
+                                <div class="main-podcast-player-right-content">
+                                    <div class="podcast-player-backward backward-onclick-function">
+                                        <i class="fa-solid fa-backward" title="Letzter Podcast"></i>
+                                    </div>
+                                    <div class="podcast-player-play play-onclick-function">
+                                        <i class="fa-solid fa-play" title="Podcast abspielen"></i>
+                                        <i class="fa-solid fa-pause" title="Podcast pausieren" style="display:none;"></i>
+                                    </div>
+                                    <div class="podcast-player-forward forward-onclick-function">
+                                        <i class="fa-solid fa-forward"  title="Nächster Podcast"></i>
+                                    </div>
+                                    <div class="podcast-player-back-podcast">
+                                        <i class="fa-solid fa-right-to-bracket" title="Zurück zur Podcast Detail Seite"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Main Player -->
+
+            </div>
+        </main>
+        <!-- Main Bereich -->
+
+        <!-- Player Fullscreen Modal -->
+        <div class="player-fullscreen-container">
+            <div class="player-fullscreen-content">
+                <div class="player-fullscreen-distance">
+                    <div class="player-fullscreen-close-container">
+                        <div class="player-fullscreen-close-icon-sys">
+                            <i class="player-fullscreen-close-icon fa-solid fa-circle-xmark"></i>
+                        </div>
+                    </div>
+                    <div class="player-fullscreen-main-container">
+                        <div class="player-fullscreen-main-content">
+                            <div class="player-fullscreen-inner-container">
+                                <div class="player-fullscreen-inner-top-container">
+                                    <div class="player-fullscreen-inner-musik_icon-container">
+                                        <i class="player-fullscreen-inner-musik_icon fa-solid fa-podcast"></i>
+                                        <img class="fullscreen-player-image" id="fullscreen-player-image" style="display:none;" src="placeholder.png" alt="Podcast Image">
+                                    </div>
+                                </div>
+                                <div class="player-fullscreen-inner-bottom-container">
+                                    <div class="player-fullscreen-inner-time-container">
+                                        <div class="player-fullscreen-inner-time-top-container">
+                                            <div class="player-fullscreen-inner-time-line-container">
+                                                <input type="range" min="0" max="100" value="0" id="fullscreen-player-time-range" class="fullscreen-player-range-input" disabled/>
+                                            </div>
+                                        </div>
+                                        <div class="player-fullscreen-inner-time-bottom-container">
+                                            <div class="player-fullscreen-inner-time-bottom-time_text">
+                                                <p id="current-time">0:00</p>
+                                            </div>
+                                            <div class="player-fullscreen-inner-time-bottom-time_text">
+                                                <p id="total-time">0:00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="player-fullscreen-inner-play_system-container">
+                                        <div class="player-fullscreen-inner-play_system-left-container">
+                                            <i class="player-fullscreen-inner-play_system-icon fa-solid fa-backward"  title="Letzter Podcast"></i>
+                                        </div>
+                                        <div class="player-fullscreen-inner-play_system-center-container fullscreen-podcast-player-play">
+                                            <i class="player-fullscreen-inner-play_system-icon fa-solid fa-play" title="Podcast abspielen"></i>
+                                            <i class="player-fullscreen-inner-play_system-icon fa-solid fa-pause" title="Podcast pausieren" style="display:none;"></i>
+                                        </div>
+                                        <div class="player-fullscreen-inner-play_system-right-container">
+                                            <i class="player-fullscreen-inner-play_system-icon fa-solid fa-forward" title="Nächster Podcast"></i>
+                                        </div>
+                                    </div>
+                                    <div class="player-fullscreen-inner-volume-container">
+                                        <div class="player-fullscreen-inner-volume-left-container">
+                                            <i class="player-fullscreen-inner-volume-icon fa-solid fa-volume-down"></i>
+                                        </div>
+                                        <div class="player-fullscreen-inner-volume-line-container">
+                                            <div class="fullscreen-player-range-container">
+                                                <input type="range" min="0" max="50" value="5" id="fullscreen-player-range-js" class="fullscreen-player-range-input" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Player Fullscreen Modal -->
+
+    </body>
+    <!-- Body Bereich-->
+
+    <!-- Javascript Source -->
+    <script type="text/javascript" src="./js/player/openFullscreenPlayer.js"></script>
+    <script type="text/javascript" src="./js/details/loadPodcastDetailsNavigate.js"></script>
+    <script type="text/javascript" src="./js/search/podcastSearch.js"></script>
+    <script type="text/javascript" src="./js/search/randomPodcast.js"></script>
+    <script type="text/javascript" src="./js/details/category.js"></script>
+    <script type="text/javascript" src="./js/account/removeFavorites.js"></script>
+    <script type="text/javascript" src="./js/account/isFavoritesLogged.js"></script>
+    <script type="text/javascript" src="./js/account/deleteAccount.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/details/setActiveSidebarButton.js"></script>
+    <script type="text/javascript" src="./js/details/slider.js" defer></script>
+    <script type="text/javascript" src="./js/details/sidebarResponsive.js"></script>
+    <script type="text/javascript" src="./js/search/speedSearch.js"></script>
+    <script type="text/javascript" src="./js/search/focusedSearchInput.js"></script>
+    <script type="text/javascript" src="./js/player/player.js"></script>
+    <script type="text/javascript" src="./js/account/register.js" defer></script>
+    <script type="text/javascript" src="./js/account/login.js" defer></script>
+    <script type="text/javascript" src="./js/account/logout.js" defer></script>
+    <script type="text/javascript" src="./js/account/loadUserInfo.js"></script>
+    <script type="text/javascript" src="./js/account/changePassword.js" defer></script>
+    <script type="text/javascript" src="./js/account/ifLoggedIn.js" defer></script>
+    <script type="text/javascript" src="./js/account/authentification.js" defer></script>
+    <!-- Javascript Source -->
+
+    <!-- Web-App installieren -->
+    <script type="module">
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register(new URL('./service-worker.js', import.meta.url))
+                    .then((registration) => {
+                        console.log('Service Worker registriert mit Erfolg:', registration);
+                    })
+                    .catch((error) => {
+                        console.log('Fehler bei der Registrierung des Service Workers:', error);
+                    });
+
+            });
+        }
+    </script>
+    <!-- Web-App installieren -->
+
+    <!-- NOJavascript -->
+    <noscript>Die Podcast App geht nur, wenn Javascript aktiviert ist!</noscript>
+    <!-- NOJavascript -->
+
+    <!-- Icon Libary -->
+    <script src="https://kit.fontawesome.com/a2e873c6bb.js" type="text/javascript" charset="utf-8" crossorigin="anonymous"></script>
+    <!-- Icon Libary -->
+
+</html>

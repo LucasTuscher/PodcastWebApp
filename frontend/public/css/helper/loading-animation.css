@@ -1,0 +1,19 @@
+/* Loading Animation */
+.loading {margin-bottom:30px;}
+.session-renewed-container {height:36px;display:flex;justify-content:center;align-items:center;flex-direction:row;}
+.session-renewed-left-container {display:flex;align-items:center;}
+.session-renewed-left-container .session-renewed-left-text {font-size:17px;font-family:"SF Pro Display Bold";line-height:1;display:flex;justify-content:center;text-align:center;align-items:center;color:rgb(255, 255, 255, 0.60);margin-right:5px;;}
+.session-renewed-right-container {display:flex;align-items:center;}
+.loading-animation-01-container {display:inline-block;position:relative;transform:scale(0.7);width:40px;height:40px;}
+.loading-animation-01-container .loading-animation-01-bar {transform-origin:20px 20px;animation:loading-animation-01-container 1.20s linear infinite;}
+.loading-animation-01-container .loading-animation-01-bar:after {content:" ";display:block;position:absolute;top:5px;left:18px;width:5px;height:10px;border-radius:50px;background:#fff;}
+.loading-animation-01-container .loading-animation-01-bar:nth-child(1) {transform:rotate(0deg);animation-delay:-1.05s;}
+.loading-animation-01-container .loading-animation-01-bar:nth-child(2) {transform:rotate(45deg);animation-delay:-0.90s;}
+.loading-animation-01-container .loading-animation-01-bar:nth-child(3) {transform:rotate(90deg);animation-delay:-0.75s;}
+.loading-animation-01-container .loading-animation-01-bar:nth-child(4) {transform:rotate(135deg);animation-delay:-0.60s;}
+.loading-animation-01-container .loading-animation-01-bar:nth-child(5) {transform:rotate(180deg);animation-delay:-0.45s;}
+.loading-animation-01-container .loading-animation-01-bar:nth-child(6) {transform:rotate(225deg);animation-delay:-0.30s;}
+.loading-animation-01-container .loading-animation-01-bar:nth-child(7) {transform:rotate(270deg); animation-delay:-0.15s;}
+.loading-animation-01-container .loading-animation-01-bar:nth-child(8) {transform:rotate(315deg); animation-delay:0s;}
+@keyframes loading-animation-01-container { 0% { opacity: 1; } 25% { opacity: 1; } 100% { opacity: 0; } }
+/* Loading Animation */
