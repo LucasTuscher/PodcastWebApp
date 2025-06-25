@@ -18,11 +18,7 @@ Die Hauptordner enthalten den Frontend-Code (`frontend/`), den Backend-Server (`
 - Node.js (v18+ empfohlen)  
 - MongoDB lokal oder remote (z. B. Atlas)  
 - Docker & Docker Compose (optional für Deployment)  
-- Git (für Klonen & Versionierung)  
-
-## Bilder von der Podcast Webseite
-
-<img src="./screenshots/podcastappimage.png" alt="Podcast WebApp Screenshot" style="max-width:600px; width:100%; height:auto;"> 
+- Git (für Klonen & Versionierung)
 
 ## Mitwirkende
 
@@ -31,3 +27,7 @@ Hier ist eine Liste mit allen Mitwirkenden des Podcast-Projekts:
 - Lucas Tuscher
 - Guilherme Ferreira de Mattos Nogueira Junior  
 - Niclas Tredup  
+
+## Bilder von der Podcast Webseite
+
+<img src="./screenshots/podcastappimage.png" alt="Podcast WebApp Screenshot" style="max-width:600px; width:100%; height:auto;"> 
