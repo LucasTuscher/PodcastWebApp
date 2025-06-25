@@ -23,3 +23,11 @@ Die Hauptordner enthalten den Frontend-Code (`frontend/`), den Backend-Server (`
 ## Bilder von der Podcast Webseite
 
 <img src="./screenshots/podcastappimage.png" alt="Podcast WebApp Screenshot" style="max-width:600px; width:100%; height:auto;"> 
+
+## Mitwirkende
+
+Hier ist eine Liste mit allen Mitwirkenden des Podcast-Projekts:
+
+- Lucas Tuscher
+- Guilherme Ferreira de Mattos Nogueira Junior  
+- Niclas Tredup  
